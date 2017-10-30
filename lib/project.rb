@@ -8,7 +8,7 @@ class Project
   def save
     @@all << self
   end
-  def backed_by(backer)
+  def add_backer(backer)
     @backers << backer
   end
   def self.find_or_create_by_name(name)
