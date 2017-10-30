@@ -13,6 +13,10 @@ class Backer
     @@all << self
   end
 
+  def proj_is_new(proj)
+    !@backed_projects.include?(proj)
+  end
+
   def back_project(proj)
     #proj = Project.find_or_create_by_name(name)
     self.backed_projects << proj
