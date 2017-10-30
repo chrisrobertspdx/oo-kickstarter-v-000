@@ -13,7 +13,7 @@ class Backer
     @@all << self
   end
 
-  def proj_is_new(proj)
+  def proj_is_new?(proj)
     !@backed_projects.include?(proj)
   end
 
