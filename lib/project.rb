@@ -11,7 +11,7 @@ class Project
   def add_backer(backer)
     @backers << backer
   end
-  def proj.backer_is_new?(backer)
+  def backer_is_new?(backer)
     !@backers.include?(backer)
   end
   def self.find_or_create_by_name(name)
