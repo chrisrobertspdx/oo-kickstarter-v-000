@@ -6,7 +6,7 @@ class Project
     @backers = []
   end
   def save
-    @@projects << self
+    @@all << self
   end
   def backed_by(backer)
     @backers << backer
@@ -21,7 +21,7 @@ class Project
       instance
     end
   end
-  def self.all 
-    @@all 
+  def self.all
+    @@all
   end
 end
