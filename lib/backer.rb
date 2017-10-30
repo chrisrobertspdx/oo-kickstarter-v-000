@@ -13,8 +13,8 @@ class Backer
     @@all << self
   end
 
-  def back_project(name)
-    proj = Project.find_or_create_by_name(name)
+  def back_project(proj)
+    #proj = Project.find_or_create_by_name(name)
     self.backed_projects << proj
     proj.backed_by(self)
   end
