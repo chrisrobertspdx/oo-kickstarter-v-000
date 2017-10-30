@@ -1,7 +1,7 @@
 class Backer
   attr_accessor :name, :backed_projects
 
-  @@backers = []
+  @@all = []
 
   def initialize(name)
     @name = name
@@ -10,13 +10,17 @@ class Backer
   end
 
   def save
-    @@backers << self
+    @@all << self
   end
 
   def back_project(name)
     proj = Project.find_or_create_by_name(name)
     self.backed_projects << proj
     proj.backed_by(self)
+  end
+
+  def self.all
+    @@all
   end
 
 end
