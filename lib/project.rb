@@ -1,6 +1,6 @@
 class Project
   attr_accessor :name, :backers
-  @@projects = []
+  @@all = []
   def initialize(name)
     @name = name
     @backers = []
@@ -12,7 +12,7 @@ class Project
     @backers << backer
   end
   def self.find_or_create_by_name(name)
-    project_list = @@projects.select{|e| e.name == name}
+    project_list = @@all.select{|e| e.name == name}
     if project_list.size > 0
        project_list[0]
     else
