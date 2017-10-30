@@ -16,7 +16,9 @@ class Backer
   def back_project(proj)
     #proj = Project.find_or_create_by_name(name)
     self.backed_projects << proj
-    proj.add_backer(self)
+    if proj.backer_is_new?
+      proj.add_backer(self)
+    end
   end
 
   def self.all
